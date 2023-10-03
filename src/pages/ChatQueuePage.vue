@@ -39,7 +39,7 @@ export default {
         const usernameResponse = await api.get(`http://localhost:8083/functional/getusername/${queue.chatId}`);
         localStorage.setItem('username', usernameResponse.data.username);
 
-        router.push({ path: '/home', params: { sender: queue.chatId.toString() } });
+        router.push({ path: '/ChatPage', params: { sender: queue.chatId.toString() } });
       } catch (error) {
         console.error('Помилка при деактивації черги:', error);
       }

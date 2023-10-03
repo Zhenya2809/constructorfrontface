@@ -19,7 +19,7 @@ const logOut = () => {
   localStorage.removeItem('username');
   localStorage.removeItem('token');
   localStorage.removeItem('role');
-  window.location.href = 'http://localhost:8080/login';
+  // window.location.href = 'http://localhost:8080/login';
 }
 
 const hasRole = (role) => {
@@ -41,24 +41,10 @@ onMounted(() => {
         :size="110"
         :src="img1"
     />
-    <router-link v-if="hasRole('ROLE_USER')" to="/home" exact>Головна</router-link>
+    <router-link v-if="hasRole('ROLE_USER')" to="/chatPage" exact>ChatPage</router-link>
     <router-link v-if="hasRole('ROLE_USER')" to="/chatQueue" exact>Queue</router-link>
     <router-link v-if="hasRole('ROLE_USER')" to="/createBot" exact>CreateBot</router-link>
-
-<!--    <router-link v-if="hasRole('ROLE_USER')" to="/my-appointment" exact>Записи</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_USER')" to="/chose-doctor">Лікарі</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_USER')" to="/about">Про нас</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_USER')" to="/profile">Мій профіль</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_ADMIN')" to="/profile">Картки</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_ADMIN')" to="/users-menu">Користувачі</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_ADMIN')" to="/doctors-menu">Лікарі</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_ADMIN')" to="/admin">Нагадування</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_ADMIN')" to="/test-page">testPage</router-link>-->
-<!--    <router-link v-if="hideContent" to="/login" class="login">Вхід</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_DOCTOR')" to="/appointments" exact>Записи</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_DOCTOR')" to="/doctor-profile" exact>Мій профіль</router-link>-->
-<!--    <router-link v-if="hasRole('ROLE_DOCTOR')" to="/treatment" exact>Лікування</router-link>-->
-    <router-link v-if="hasRole('ROLE_ADMIN')||hasRole('ROLE_USER')||hasRole('ROLE_DOCTOR')" to="/login" @click="logOut"
+    <router-link v-if="hasRole('ROLE_ADMIN')||hasRole('ROLE_USER')||hasRole('ROLE_NEW')" to="/login" @click="logOut"
                  class="logout">Вихід
     </router-link>
   </nav>

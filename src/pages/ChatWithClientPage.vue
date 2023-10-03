@@ -4,8 +4,8 @@
   </div>
   <div id="main-content" class="container">
     <div class="connect-disconnect">
-      <button v-if="!connected" @click="connect" class="connect-button">Connect</button>
-      <button v-else @click="disconnect" class="disconnect-button">Disconnect</button>
+<!--      <button v-if="!connected" @click="connect" class="connect-button">Connect</button>-->
+<!--      <button v-else @click="disconnect" class="disconnect-button">Disconnect</button>-->
     </div>
 
     <div id="message-container" v-scroll-bottom="incomingMessages" ref="messageContainer">
@@ -143,6 +143,9 @@ export default {
       username
 
     };
+  },
+  mounted() {
+    this.connect(); // автоматично викликає метод connect при завантаженні сторінки
   }
 };
 </script>
