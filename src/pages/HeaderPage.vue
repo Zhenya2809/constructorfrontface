@@ -1,42 +1,37 @@
 <template>
-  <header>
-
-    <header class="bg-grey-lighten-1">
-      <v-row justify="center" no-gutters class="links-container">
-
-        <v-col class="text-center mt-4" cols="12">
-          <strong>{{headerPage}}</strong>
-        </v-col>
-      </v-row>
-    </header>
+  <header class="header-bg">
+    <v-row justify="center" no-gutters class="links-container">
+      <v-col class="text-center header-title" cols="12">
+        <strong>{{ headerPage }}</strong>
+      </v-col>
+    </v-row>
   </header>
 </template>
 
 <script>
 export default {
-  mounted() {
-
-  },
   name: "HeaderPage",
   data() {
-    return{
-      headerPage: ' COMPANY NAME OR LOGO !'
+    return {
+      headerPage: 'TELEGRAM API  '
     }
   }
 }
 </script>
 
 <style scoped>
-
-
-.bg-grey-lighten-1 {
-  background-color: #f3f3f3 !important;
-  color: #000000 !important;
+.header-bg {
+  background-color: #4a76a8;
+  color: #ffffff;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Вирівнювання тексту по центру */
 }
-header {
+
+.header-title {
   text-transform: uppercase;
-  position: relative;
-  text-align: center;
-  text-shadow: 0 0 15px #888888;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 24px;
 }
 </style>
